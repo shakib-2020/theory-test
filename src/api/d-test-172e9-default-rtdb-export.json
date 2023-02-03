@@ -1,0 +1,344 @@
+{
+  "questions": [
+    {
+      "category": 4,
+      "correctAnswer": 3,
+      "id": 2,
+      "question": "If a driver wishes to drive a vehicle but the tax disc is expired, what should they do?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "They should only drive on motorways.",
+        "They should apply for a new one while continuing to drive.",
+        "They should only drive in rural areas.",
+        "They should not drive it."
+      ],
+      "explanation": "A motor vehicle must be taxed and must display the up-to-date tax disc before it may be taken on the road."
+    },
+    {
+      "category": 3,
+      "correctAnswer": 1,
+      "id": 3,
+      "question": "What does this hand signal mean?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "The driver intends to turn left.",
+        "The driver intends to move straight ahead.",
+        "The driver intends to move out or turn right.",
+        "The driver intends to slow down or stop."
+      ],
+      "explanation": "This hand signal informs other road users or a garda directing traffic that the driver intends to proceed straight ahead."
+    },
+    {
+      "category": 2,
+      "correctAnswer": 1,
+      "id": 4,
+      "question": "In what position should a driver approach a roundabout when intending to take the first exit to the left?",
+      "mediaType": "video",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Approach in the left-hand lane and proceed through the roundabout.",
+        "Approach in the left-hand lane and give way to traffic already on the roundabout.",
+        "Approach in the closest lane to enter.",
+        "Approach in the right-hand lane and give way to traffic already on the roundabout."
+      ],
+      "explanation": "When you intend to take an exit to the left off a roundabout, you should always approach the roundabout in the left lane. Approach with caution and yield to traffic already on the roundabout."
+    },
+    {
+      "category": 1,
+      "correctAnswer": 2,
+      "id": 6,
+      "question": "At roadworks, what does this sign mean?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Stop.",
+        "Stop at the sign.",
+        "Stop before or at the sign.",
+        "Proceed with caution."
+      ],
+      "explanation": "This is a roadworks warning sign telling you to stop. It may be displayed by a flagman or by an automated system."
+    },
+    {
+      "category": 5,
+      "correctAnswer": 3,
+      "id": 7,
+      "question": "When driving at night the full headlights should enable the driver to see for a distance of how many metres?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": ["75 metres.", "90 metres.", "150 metres.", "100 metres."],
+      "explanation": "At night in good driving conditions the full headlights of a car will typically let you see 100 metres ahead. So, you should travel at a speed that allows you to stop within that distance."
+    },
+    {
+      "category": 3,
+      "correctAnswer": 0,
+      "id": 8,
+      "question": "What does this sign mean?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Pass either side.",
+        "Caution.",
+        "No U-turn.",
+        "Proceed with caution."
+      ],
+      "explanation": "This sign tells you that traffic must pass on either side of the traffic island."
+    },
+    {
+      "category": 3,
+      "correctAnswer": 2,
+      "id": 9,
+      "question": "What should a driver check regularly to ensure they have will have a good clear view of the road when driving?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "The wiper blades.",
+        "The windscreen to be sure it is free of scratches or holes.",
+        "There is enough fluid in the windscreen washer reservoir.",
+        "The laminate on the windscreen."
+      ],
+      "explanation": "Check the vehicle’s windscreen wipers regularly to ensure the blades are in good condition, and check that there is water in the washer bottle."
+    },
+    {
+      "category": 4,
+      "correctAnswer": 1,
+      "id": 10,
+      "question": "If a driver applies the foot brake and hears a scraping noise, what is the most likely cause?",
+      "mediaType": "video",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "The fuel injectors may be worn.",
+        "The brake linings or pads are worn.",
+        "The exhaust system may need to be replaced.",
+        "Dirt may be under the brake pads."
+      ],
+      "explanation": "You should test your brakes before setting out on a journey. If while driving you hear a scraping noise when you press the brake, the most likely reason is that the brake linings or pads are worn. In this case, your brakes won't work as well as they should. Have worn brake linings or pads replaced immediately."
+    },
+    {
+      "category": 4,
+      "correctAnswer": 0,
+      "id": 11,
+      "question": "What should a driver be aware of when driving at night along a shopping street with many different light sources?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Traffic lights may be difficult to distinguish from the other bright lights.",
+        "Hazard warning lights should be switched on.",
+        "It may be difficult to see other drivers on the road.",
+        "It may be difficult to see pedestrians."
+      ],
+      "explanation": "When driving at night in an area where there is a variety of light sources, you need to be extra careful, as potential hazards might be more difficult to see."
+    },
+    {
+      "category": 5,
+      "correctAnswer": 2,
+      "id": 12,
+      "question": "When driving late at night what should a driver be aware of?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "There there are animals that may be difficult to see.",
+        "That headlights of approaching vehicles may be blinding.",
+        "That there is a danger of falling asleep.",
+        "That other drivers may be drowsy."
+      ],
+      "explanation": "Driving when you are tired can be very dangerous, and tiredness is one of the main causes of serious road collisions. If you become drowsy while driving, stop in a safe place and take a short nap. Then get some fresh air and stretch your legs for a few minutes before setting off again. Taking a caffeine- based drink such as coffee may also help."
+    },
+    {
+      "category": 1,
+      "correctAnswer": 0,
+      "id": 13,
+      "question": "How should a driver overtake the cyclist in this situation?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "By crossing the broken white line.",
+        "By staying to the left of the broken white line.",
+        "By passing on the shoulder.",
+        "The driver should not pass the cyclist in this situation."
+      ],
+      "explanation": "Where there are two lines in the centre of the road, you must obey the one closest to you. So, if the closest line is a broken white line, by law you may overtake, so long as it is safe to do so."
+    },
+    {
+      "category": 3,
+      "correctAnswer": 3,
+      "id": 15,
+      "question": "Why is it dangerous to allow children to stand in the space between the front seats of a car?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Because they could fall between the seats.",
+        "The feet could catch in the seat belts.",
+        "They could fall and land on an adult.",
+        "They could be thrown forward if the brakes are applied suddenly."
+      ],
+      "explanation": "When carrying children in a car or goods vehicle, it is the driver's responsibility to make sure that they are suitably restrained."
+    },
+    {
+      "category": 1,
+      "correctAnswer": 1,
+      "id": 16,
+      "question": "What does this sign mean?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Crossroads ahead with roads of equal importance.",
+        "Staggered crossroads ahead with roads of equal importance.",
+        "T-junction ahead.",
+        "Main road bears to the right."
+      ],
+      "explanation": "This sign gives advance warning of a staggered junction ahead with roads to the left and right. Be aware that vehicles may be emerging from these roads."
+    },
+    {
+      "category": 5,
+      "correctAnswer": 0,
+      "id": 18,
+      "question": "After overtaking another vehicle, what should a driver do?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Gradually move back into the left when the vehicle has been overtaken.",
+        "Reduce speed.",
+        "Increase speed. Continue in right lane.",
+        "Remain in the right lane."
+      ],
+      "explanation": "After overtaking, check your mirrors, signal and return to your normal lane position as soon as it is safe. Take a smooth easy line and don’t cut in sharply."
+    },
+    {
+      "category": 1,
+      "correctAnswer": 3,
+      "id": 19,
+      "question": "What do flashing amber arrows indicate?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Drivers should stop immediately.",
+        "Drivers should drive with caution.",
+        "Drivers should slow down.",
+        "Drivers should proceed in the direction indicated."
+      ],
+      "explanation": "When you meet a flashing amber arrow, you should proceed in the direction indicated provided it is safe to do so. Large flashing amber arrows can be found at roadworks on dual carriageways and motorways"
+    },
+    {
+      "category": 2,
+      "correctAnswer": 3,
+      "id": 20,
+      "question": "What should the driver do when approaching a humpbacked hill?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "The driver should increase speed, keep to the left and be alert for hazards ahead.",
+        "The driver should increase speed, keep to the right and be alert for hazards ahead.",
+        "The driver should reduce speed, keep to the right and be alert for hazards ahead.",
+        "The driver should reduce speed, keep to the left and be alert for hazards ahead."
+      ],
+      "explanation": "As you approach a humpbacked bridge or hill, you should be aware that there might be hidden dangers ahead - for example, overtaking traffic coming towards you. You should always read the road ahead and be prepared to react to changing traffic situations such as this."
+    },
+    {
+      "category": 4,
+      "correctAnswer": 2,
+      "id": 21,
+      "question": "Why should the valve be replaced when having a tubeless tyre fitted?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "To maximise air pressure.",
+        "To deflate the tyre.",
+        "To ensure the tyre will stay inflated.",
+        "To minimise air pressure."
+      ],
+      "explanation": "When fitting a new tubeless tyre to a vehicle it is a good idea to change the valve also, because it has presumably been on the wheel since the old tyre was fitted; and it could break down, leak and cause the air to escape."
+    },
+    {
+      "category": 3,
+      "correctAnswer": 3,
+      "id": 22,
+      "question": "When is it permissible to overtake another vehicle on the left-hand side?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "When the vehicle in front is signalling to turn left.",
+        "Never. Passing on the left is prohibited.",
+        "When the vehicle is driving below the speed limit.",
+        "When the vehicle in front is signalling to turn right."
+      ],
+      "explanation": "You may overtake on the left when the driver in front has moved out and signaled their intent to turn right and you are going straight ahead - provided there is enough room to do so safely and your path will not be obstructed by the swing of a large vehicle turning right."
+    },
+    {
+      "category": 2,
+      "correctAnswer": 3,
+      "id": 23,
+      "question": "What should a driver do when being overtaken by another vehicle?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Pull to the far shoulder.",
+        "Decrease speed.",
+        "Increase speed.",
+        "Continue at the same pace."
+      ],
+      "explanation": "When you are being overtaken by another vehicle, you should continue at the same pace but be alert in case the overtaking vehicle suddenly pulls back in front you."
+    },
+    {
+      "category": 1,
+      "correctAnswer": 0,
+      "id": 24,
+      "question": "Is a driver permitted to park at an entrance to a property?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Yes, with the property owner’s consent.",
+        "No, parking at an entrance to a property is prohibited.",
+        "Yes, when no signs are posted stating otherwise.",
+        "Yes, if parking for a short duration."
+      ],
+      "explanation": "You may park across the entrance to a property only with the owner’s consent. Parking across an entrance may cause inconvenience and danger to persons entering or leaving the property."
+    },
+    {
+      "category": 4,
+      "correctAnswer": 2,
+      "id": 25,
+      "question": "When a wiper blade fails to clear the windscreen what should the driver do?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Turn off the wipers.",
+        "Take the vehicle to a competent mechanic.",
+        "Switch the wipers to the highest speed.",
+        "Switch on the wipers to the lowest speed."
+      ],
+      "explanation": "Use the windscreen wipers to keep the windscreen clear of rain, spray, snow or fog. Check them regularly to ensure that they are in good working order, and replace them when they become worn, before they become ineffective."
+    },
+    {
+      "category": 4,
+      "correctAnswer": 0,
+      "id": 26,
+      "question": "When driving, where should a driver rest their left foot?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "On the floor or foot rest.",
+        "On the brake pedal.",
+        "On the left door.",
+        "On the clutch."
+      ],
+      "explanation": "The clutch is the connection between the engine and the gearbox. It enables the vehicle to move when a gear is engaged. You should not rest your foot on the clutch pedal because it may disengage the selected gear or damage the clutch mechanism."
+    },
+    {
+      "category": 1,
+      "correctAnswer": 1,
+      "id": 27,
+      "question": "What does this sign mean?",
+      "mediaType": "image",
+      "content": "https://i.ibb.co/XJFZVbT/OIP.jpg",
+      "answers": [
+        "Road divides ahead.",
+        "Roundabout ahead.",
+        "Mini-roundabout ahead.",
+        "Traffic merging/diverging ahead."
+      ],
+      "explanation": "This sign gives advance warning of a roundabout ahead. You must prepare to yield to vehicles already on the roundabout coming from the right."
+    }
+  ]
+}
