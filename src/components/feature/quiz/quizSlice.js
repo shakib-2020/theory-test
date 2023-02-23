@@ -2,11 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   value: {
+    testState: "mock",
     questions: [],
     currentIndex: 0,
     regAns: {},
     correctAns: 0,
     wrongAns: 0,
+    pass: false,
+    fail: false,
   },
 };
 
@@ -14,6 +17,9 @@ export const quizSlice = createSlice({
   name: "quiz",
   initialState,
   reducers: {
+    setTestState: (state, action) => {
+      state.value.testState = action.payload;
+    },
     setQuestions: (state, action) => {
       state.value.questions = action.payload;
     },
@@ -41,6 +47,11 @@ export const quizSlice = createSlice({
     },
     setCorrectAns: (state, action) => {
       state.value.correctAns = action.payload;
+      console.log(action.payload);
+      // it will update
+      action.payload >= 4
+        ? (state.value.pass = true)
+        : (state.value.fail = true);
     },
     setWrongAns: (state, action) => {
       state.value.wrongAns = action.payload;
@@ -59,6 +70,7 @@ export const quizSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {
+  setTestState,
   setQuestions,
   next,
   prev,

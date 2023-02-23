@@ -51,24 +51,24 @@ const QuizResultDetalis = ({ index, questionData, userSelectedAns }) => {
         <div className="result_options">
           <Row>
             <Col>
-              <label ref={option1} id="1">
+              <label ref={option1} id="0">
                 {answers[0]}
               </label>
             </Col>
             <Col>
-              <label ref={option2} id="2">
+              <label ref={option2} id="1">
                 {answers[1]}
               </label>
             </Col>
           </Row>
           <Row>
             <Col>
-              <label ref={option3} id="3">
+              <label ref={option3} id="2">
                 {answers[2]}
               </label>
             </Col>
             <Col>
-              <label ref={option4} id="4">
+              <label ref={option4} id="3">
                 {answers[3]}
               </label>
             </Col>

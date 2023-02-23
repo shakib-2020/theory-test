@@ -3,23 +3,28 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { useDispatch, useSelector } from "react-redux";
+import ReactPlayer from "react-player";
 import { next, prev, setRegAns, resetQuiz } from "./quizSlice";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+
 const initialTime = {
   min: 1,
   sec: 10,
 };
 
 const Quiz = () => {
+  const location = useLocation();
   const [checked, setChecked] = useState("");
   const [time, setTime] = useState(initialTime);
   const [progressCount, setProgressCount] = useState(0);
   // variable and redux state
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const title = location.state.title;
   const state = useSelector((state) => state.quiz.value);
-  const { questions, currentIndex, regAns } = state;
-  const { question, answers, correctAnswer } = questions[currentIndex];
+  const { testState, questions, currentIndex, regAns } = state;
+  const { question, answers, correctAnswer, mediaType, content } =
+    questions[currentIndex];
 
   // timer
   let timerInterval;
@@ -45,8 +50,17 @@ const Quiz = () => {
         });
       }
     };
-    timerInterval = setInterval(updateCountDown, 1000);
 
+    switch (testState) {
+      case "mock":
+        timerInterval = setInterval(updateCountDown, 1000);
+        break;
+      case "practice":
+        clearInterval(timerInterval);
+        break;
+      default:
+        break;
+    }
     return () => {
       clearInterval(timerInterval);
     };
@@ -58,8 +72,8 @@ const Quiz = () => {
     const { style } = event.target.parentNode;
     setChecked(value);
     dispatch(setRegAns({ value, currentQues: currentIndex }));
-
-    if (value == correctAnswer) {
+    console.log({ correctAnswer, value });
+    if (value === `${correctAnswer}`) {
       // here value is number,correctAnswer is char;
       style.outline = "1px solid green";
     } else {
@@ -103,7 +117,10 @@ const Quiz = () => {
   };
   // handle submit
   const handleSubmit = () => {
-    navigate("/quizResult", { replace: true });
+    navigate("/quizResult", {
+      state: { title: title },
+      replace: true,
+    });
   };
   // handle quit
   const handleQuit = () => {
@@ -118,10 +135,12 @@ const Quiz = () => {
       <div className="quiz-wrapper text-center">
         <div className="quiz-meta">
           <div className="timer">
-            <h6>
-              Remaining time: {time.min < 10 ? "0" + time.min : time.min} :
-              {time.sec < 10 ? "0" + time.sec : time.sec}
-            </h6>
+            {testState !== "practice" && (
+              <h6>
+                Remaining time: {time.min < 10 ? "0" + time.min : time.min} :
+                {time.sec < 10 ? "0" + time.sec : time.sec}
+              </h6>
+            )}
           </div>
           <div className="progressbar">
             <ProgressBar variant="warning" now={progressCount} />
@@ -133,19 +152,31 @@ const Quiz = () => {
           </h5>
           <h3>{question}</h3>
         </div>
+        <div className="content text-center">
+          {mediaType === "image" && <img src={content} alt="content" />}
+          {mediaType === "video" && (
+            <div className="player">
+              <ReactPlayer
+                url={`https://appsbreaking.com/parkingvideo.mp4`}
+                controls={true}
+                outline={true}
+              ></ReactPlayer>
+            </div>
+          )}
+        </div>
         <div className="options">
           <Row>
             <Col>
               <label
                 htmlFor="option1"
-                style={{ backgroundColor: checked === "1" && "palegoldenrod" }}
+                style={{ backgroundColor: checked === "0" && "palegoldenrod" }}
               >
                 <input
                   id="option1"
                   type="radio"
-                  value="1"
+                  value="0"
                   name="option"
-                  checked={checked === "1"}
+                  checked={checked === "0"}
                   onChange={handleChange}
                 />
                 {answers[0]}
@@ -154,14 +185,14 @@ const Quiz = () => {
             <Col>
               <label
                 htmlFor="option2"
-                style={{ backgroundColor: checked === "2" && "palegoldenrod" }}
+                style={{ backgroundColor: checked === "1" && "palegoldenrod" }}
               >
                 <input
                   id="option2"
                   type="radio"
-                  value="2"
+                  value="1"
                   name="option"
-                  checked={checked === "2"}
+                  checked={checked === "1"}
                   onChange={handleChange}
                 />
                 {answers[1]}
@@ -172,14 +203,14 @@ const Quiz = () => {
             <Col>
               <label
                 htmlFor="option3"
-                style={{ backgroundColor: checked === "3" && "palegoldenrod" }}
+                style={{ backgroundColor: checked === "2" && "palegoldenrod" }}
               >
                 <input
                   id="option3"
                   type="radio"
-                  value="3"
+                  value="2"
                   name="option"
-                  checked={checked === "3"}
+                  checked={checked === "2"}
                   onChange={handleChange}
                 />
                 {answers[2]}
@@ -188,14 +219,14 @@ const Quiz = () => {
             <Col>
               <label
                 htmlFor="option4"
-                style={{ backgroundColor: checked === "4" && "palegoldenrod" }}
+                style={{ backgroundColor: checked === "3" && "palegoldenrod" }}
               >
                 <input
                   id="option4"
                   type="radio"
-                  value="4"
+                  value="3"
                   name="option"
-                  checked={checked === "4"}
+                  checked={checked === "3"}
                   onChange={handleChange}
                 />
                 {answers[3]}

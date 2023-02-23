@@ -1,20 +1,30 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setQuestions } from "./quizSlice";
+import { LockIcon } from "@primer/octicons-react";
 
 const QuizSingle = ({ title, questions }) => {
   const dispath = useDispatch();
   const navigate = useNavigate();
-  dispath(setQuestions(questions));
+  const isLogedin = useSelector((state) => state.auth.value.isLogedin);
+  console.log(isLogedin);
   const handleClick = () => {
-    navigate("/quizmenu");
+    if (isLogedin) {
+      dispath(setQuestions(questions));
+      navigate("/quizmenu", { state: { title } });
+    }
   };
   return (
     <>
       <div onClick={handleClick} className="single-quiz">
         <img src="https://i.ibb.co/MBWMrSf/car.png" alt="car-logo" />
-        <h2>{title}</h2>
+        <h5>{title}</h5>
+        {!isLogedin && (
+          <span className="lock">
+            <LockIcon size={24} />
+          </span>
+        )}
       </div>
     </>
   );

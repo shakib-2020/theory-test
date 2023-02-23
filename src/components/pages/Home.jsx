@@ -1,9 +1,18 @@
 import React from "react";
-import QuizListArea from "../feature/quiz/Quiz_list_area";
+import Categories from "../feature/categories/Categories";
+import QuizListArea from "../feature/quiz/QuizListArea";
+import Footer from "../Footer";
+import Header from "../Header";
+import Hero from "../Hero";
+import Services from "../Services";
 const Home = () => {
   return (
     <>
-      <QuizListArea />
+      <Header />
+      <Hero />
+      <Services />
+      <Categories />
+      <Footer />
     </>
   );
 };

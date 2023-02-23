@@ -1,0 +1,18 @@
+.service {
+  padding: 0 64px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.single-service {
+  box-shadow: 1px 4px 6px 0px #cdcdcd;
+  border-radius: 5px;
+  padding: 10px;
+}
+.single-service h4 {
+  margin-top: 10px;
+}
+.single-service p {
+  font-size: 15px;
+  text-align: center;
+}
