@@ -1,14 +1,16 @@
 import "./Categories.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setQuestions, setTestState } from "../quiz/quizSlice";
+import UserProgress from "./UserProgress";
 
 const Category = ({ id, title, icon }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth.value);
   const questionsDB = useSelector((state) => state.db.value.questionsDB);
+
   const handleClick = () => {
     const categoryId = id;
     const categoryQuestion = questionsDB.filter((item) => {
@@ -23,15 +25,6 @@ const Category = ({ id, title, icon }) => {
     console.log(categoryQuestion);
     navigate("/quizmenu", { state: { title } });
   };
-  const UserProgress = () => {
-    return (
-      <div className="btn-right">
-        {/* <span className="completed">Completed 100%</span> */}
-        <span className="pending">Pending 40%</span>
-        <span className="count">Corract: 6/10</span>
-      </div>
-    );
-  };
   return (
     <>
       <div className="category-wrapper" onClick={handleClick}>
@@ -39,7 +32,7 @@ const Category = ({ id, title, icon }) => {
           <img alt="category icon" src={icon} />
           <h3>{title}</h3>
         </div>
-        {user !== null && <UserProgress />}
+        {user !== null && <UserProgress title={title} />}
       </div>
     </>
   );

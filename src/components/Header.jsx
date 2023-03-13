@@ -26,6 +26,7 @@ const Header = () => {
   const ActiveUser = () => {
     if (user !== null) {
       const userName = user.displayName;
+      console.log(userName);
       const first_name = userName.split("-")[0];
       const last_name = userName.split("-")[1];
       return <span className="user-name">{`${first_name} ${last_name}`}</span>;

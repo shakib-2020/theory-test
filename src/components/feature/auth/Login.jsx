@@ -1,30 +1,54 @@
 // Render Prop
 import "./Auth.css";
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
+import Spinner from "react-bootstrap/Spinner";
 import { SignInSchema } from "../../schemas";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../../config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useDispatch } from "react-redux";
-import { setLogin, setUser } from "./authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setLogin } from "./authSlice";
+import Toast from "../../../utils/toast/MyToast";
+import { setShow } from "../../../utils/toast/myToastSlice";
+import { setLoading } from "../../../appSlice";
 const initialValues = {
   email: "",
   password: "",
 };
 
 const Login = () => {
+  const [serverError, handleServerError] = useState();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { loading } = useSelector((state) => state.app.value);
+
+  const firebaseErrorHandler = (err) => {
+    console.log(err.code);
+
+    switch (err.code) {
+      case "auth/user-not-found":
+        return "User not found.Please register for an account!";
+      case "auth/wrong-password":
+        return "You have enterd wrong password.";
+      default:
+        return err.message;
+    }
+  };
+
   const handleLogin = async (userInfo) => {
+    dispatch(setLoading(true));
     const { email, password } = userInfo;
-    const userCradential = await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-    dispatch(setLogin(true));
-    navigate("/");
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      dispatch(setLogin(true));
+      navigate("/");
+      dispatch(setLoading(false));
+    } catch (err) {
+      handleServerError(firebaseErrorHandler(err));
+      dispatch(setShow(true));
+      dispatch(setLoading(false));
+    }
   };
 
   // formik
@@ -38,10 +62,10 @@ const Login = () => {
         action.resetForm();
       },
     });
-  console.log(errors);
   return (
     <>
       <div className="reg-container">
+        <Toast error={serverError} />
         <div className="reg-left">
           <h1 className="reg-title">Sign In</h1>
           <p className="reg-desc">To Free Driving theory test.</p>
@@ -86,9 +110,16 @@ const Login = () => {
               <Link href="#" className="">
                 Want to sing in using Gmail?
               </Link>
-              <button className="input-button" type="submit">
-                LogIn
-              </button>
+              {loading ? (
+                <button className="input-button" disabled>
+                  <Spinner animation="grow" size="sm" />
+                  Loging in...
+                </button>
+              ) : (
+                <button className="input-button" type="submit">
+                  LogIn
+                </button>
+              )}
             </div>
           </form>
           <p className="sign-up">

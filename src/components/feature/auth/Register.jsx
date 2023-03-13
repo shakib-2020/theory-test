@@ -2,13 +2,14 @@
 import "./Auth.css";
 import React from "react";
 import { useFormik } from "formik";
+import Spinner from "react-bootstrap/Spinner";
 import { SignUpSchema } from "../../schemas";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setLogin, setUser } from "./authSlice";
 import { auth } from "../../../config/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-
+import { setLoading } from "../../../appSlice";
 const initialValues = {
   first_name: "",
   last_name: "",
@@ -20,22 +21,27 @@ const initialValues = {
 const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { loading } = useSelector((state) => state.app.value);
 
   const handleAuth = async (userInfo) => {
+    dispatch(setLoading(true));
     const { first_name, last_name, email, password } = userInfo;
     console.log("user info", userInfo);
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCradential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const updatedAuthUser = await updateProfile(auth.currentUser, {
         displayName: `${first_name}-${last_name}`,
       });
-
-      console.log(updatedAuthUser);
+      dispatch(setLogin(true));
+      navigate("/");
+      dispatch(setLoading(false));
     } catch (error) {
       console.log(error);
     }
-    dispatch(setLogin(true));
-    navigate("/");
   };
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
@@ -149,11 +155,19 @@ const Register = () => {
               <Link href="#" className="">
                 Want to register using Gmail?
               </Link>
-              <button className="input-button" type="submit">
-                Registration
-              </button>
+              {loading ? (
+                <button className="input-button" disabled>
+                  <Spinner animation="grow" size="sm" />
+                  Sigin Up...
+                </button>
+              ) : (
+                <button className="input-button" type="submit">
+                  Sign UP
+                </button>
+              )}
             </div>
           </form>
+
           <p className="sign-up">
             Already have an account? <Link to={"/login"}>Sign In now</Link>
           </p>

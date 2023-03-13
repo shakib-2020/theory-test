@@ -1,11 +1,13 @@
 .reg-container {
   background-color: #efedee;
   padding: 5% 25%;
+  position: relative;
 }
+
 .reg-title {
   margin: 0;
   font-weight: 400;
-  color: #55311c;
+  color: #2f4e5e;
 }
 .form-error {
   font-size: 0.9rem;
@@ -21,20 +23,7 @@
   transition-duration: 0.5s;
   opacity: 1;
 }
-
 .reg-right {
-  flex: 2;
-  font-size: 0;
-  transition: 0.3s;
-  overflow: hidden;
-}
-.reg-right img {
-  width: 100%;
-  height: 100%;
-  transform: scale(1);
-  -o-object-fit: cover;
-  object-fit: cover;
-  transition-duration: 1.2s;
 }
 
 .reg.is-open .reg-left {
@@ -48,7 +37,7 @@
   align-items: center;
 }
 .reg-buttons a {
-  color: rgba(51, 51, 51, 0.6);
+  color: #2f4e5e;
   font-size: 14px;
 }
 
@@ -58,7 +47,7 @@
   text-align: center;
 }
 .sign-up a {
-  color: #8c7569;
+  color: #4092bb;
 }
 
 .input-button {
@@ -68,12 +57,12 @@
   border: 0;
   color: #fff;
   border-radius: 4px;
-  background: #8c7569;
+  background: #4092bb;
   transition: 0.3s;
   cursor: pointer;
 }
 .input-button:hover {
-  background: #55311c;
+  background: #2f4e5e;
 }
 
 .input-label {

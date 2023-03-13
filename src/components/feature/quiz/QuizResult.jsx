@@ -10,10 +10,9 @@ const QuizResult = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const title = location.state.title;
-  console.log(title);
-  const state = useSelector((state) => state.quiz.value);
-  const { user, isLogedin } = useSelector((state) => state.auth.value);
-  const { questions, regAns, correctAns, wrongAns, pass, fail } = state;
+  const { user } = useSelector((state) => state.auth.value);
+  const quizState = useSelector((state) => state.quiz.value);
+  const { questions, regAns, correctAns, wrongAns, pass, fail } = quizState;
 
   // result
   let ansList = [];
@@ -33,23 +32,28 @@ const QuizResult = () => {
     });
     return { correct, wrong };
   };
-  useEffect(async () => {
+  useEffect(() => {
     const { correct, wrong } = getResult(ansList, regAns);
     dispatch(setCorrectAns(correct));
     dispatch(setWrongAns(wrong));
-    try {
-      const docRef = await addDoc(
-        collection(db, "users", user.uid, `${title}`),
-        {
-          total: questions.length,
-          correctAns: correctAns,
-          wrongAns: wrongAns,
-        }
-      );
-      console.log("Document written by user uid");
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
+
+    const addData = async () => {
+      try {
+        const docRef = await addDoc(
+          collection(db, "users", user.uid, `${title}`),
+          {
+            questions,
+            regAns,
+            correctAns: correct,
+            wrongAns: wrong,
+          }
+        );
+        console.log("Document written by user uid");
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    };
+    addData();
   }, []);
 
   return (

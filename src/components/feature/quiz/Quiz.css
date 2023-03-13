@@ -57,6 +57,7 @@
 /* quiz */
 .quiz-wrapper {
   padding: 0 10%;
+  padding-bottom: 200px;
 }
 .content img {
   width: 200px;

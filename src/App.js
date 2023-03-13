@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, json } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
 import QuizMenu from "./components/feature/quiz/QuizMenu";
 import QuizResult from "./components/feature/quiz/QuizResult";
@@ -8,14 +8,14 @@ import Register from "./components/feature/auth/Register";
 import Login from "./components/feature/auth/Login";
 import { useEffect } from "react";
 import { auth } from "./config/firebase";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setLogin, setUser } from "./components/feature/auth/authSlice";
 import { setQuestionsDB } from "./dbSlice";
 import { ref, get, child } from "firebase/database";
 import { ques_db } from "./config/firebase";
-import CategoryPage from "./components/pages/CategoryPage";
 function App() {
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth.value);
   useEffect(() => {
     // check if there is any user login
     auth.onAuthStateChanged((authUser) => {
@@ -59,7 +59,6 @@ function App() {
           <Route exact path="/quizmenu" element={<QuizMenu />}></Route>
           <Route exact path="/quiz" element={<Quiz />}></Route>
           <Route exact path="/quizResult" element={<QuizResult />}></Route>
-          <Route exact path="/categoryPage" element={<CategoryPage />}></Route>
         </Routes>
       </Router>
     </div>

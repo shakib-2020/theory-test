@@ -4,7 +4,7 @@ import Category from "./Category";
 
 const Categories = () => {
   return (
-    <div className="categories-wrapper">
+    <div className="categories-wrapper" id="learning">
       <h2 className="title">Categories</h2>
       <div className="category-list">
         {catergoryList.map((item, index) => {
